@@ -9,13 +9,10 @@ import * as S from './styles'
 const Modal = ({ isClick, id }) => {
   const [isOpen, setIsOpen] = useState(false)
 
-  const { data: { pokemon = [] } = {}, loading } = useQuery(
-    GET_POKEMON_DETAILS,
-    {
-      notifyOnNetworkStatusChange: true,
-      variables: { id: id }
-    }
-  )
+  const { data: { pokemon = [] } = {} } = useQuery(GET_POKEMON_DETAILS, {
+    notifyOnNetworkStatusChange: true,
+    variables: { id: id }
+  })
 
   useEffect(() => {
     setIsOpen(isClick)

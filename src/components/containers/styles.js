@@ -30,12 +30,3 @@ export const cardsBox = styled.div`
   gap: 14px;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 `
-
-export const ShowMore = styled.div`
-  width: 100%;
-  height: 50px;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  margin-top: 2rem;
-`
