@@ -6,7 +6,6 @@ import * as S from './styles'
 
 export function PokemonCard({ pokemon }) {
   const [isClick, setIsClick] = useState(false)
-  console.log('isclick', isClick)
 
   return (
     <>
@@ -21,7 +20,7 @@ export function PokemonCard({ pokemon }) {
         </strong>
         <CatchButton id={pokemon.id} />
       </S.Thumbnail>
-      <Modal isClick={isClick} />
+      <Modal isClick={isClick} id={pokemon.id} />
     </>
   )
 }
