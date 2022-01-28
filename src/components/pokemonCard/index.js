@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
+import { CatchButton } from '../catchButton'
 
 import * as S from './styles'
 
 export function PokemonCard({ pokemon }) {
-  const [catchList, setCatchList] = useState([])
-  console.log(catchList)
-
   return (
     <S.Thumbnail>
       <S.CardImg>
@@ -16,15 +14,7 @@ export function PokemonCard({ pokemon }) {
       <strong>
         {pokemon.weight.maximum}' | '{pokemon.height.maximum}{' '}
       </strong>
-      <S.Toggle>
-        <input
-          id={`switch-flat-${pokemon.id}`}
-          class="switch switch--flat"
-          type="checkbox"
-          onClick={() => setCatchList([...catchList, pokemon.id])}
-        />
-        <label for={`switch-flat-${pokemon.id}`}></label>
-      </S.Toggle>
+      <CatchButton id={pokemon.id} />
     </S.Thumbnail>
   )
 }

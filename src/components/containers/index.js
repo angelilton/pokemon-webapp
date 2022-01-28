@@ -15,8 +15,6 @@ export function PokemonsContainer() {
     variables: { first: 4 }
   })
 
-  console.log('loadin')
-
   const handleShowMore = () => {
     fetchMore({
       variables: {
