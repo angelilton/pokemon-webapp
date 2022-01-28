@@ -1,11 +1,21 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
+import { useQuery } from '@apollo/react-hooks'
+import { GET_POKEMON_DETAILS } from '../../graphql/querys-pokemons'
+import { PokemonDetails } from '../PokemonDetails'
 
 import * as S from './styles'
 
-const Modal = ({ isClick }) => {
+const Modal = ({ isClick, id }) => {
   const [isOpen, setIsOpen] = useState(false)
-  console.log('modal', isOpen)
+
+  const { data: { pokemon = [] } = {}, loading } = useQuery(
+    GET_POKEMON_DETAILS,
+    {
+      notifyOnNetworkStatusChange: true,
+      variables: { id: id }
+    }
+  )
 
   useEffect(() => {
     setIsOpen(isClick)
@@ -19,7 +29,7 @@ const Modal = ({ isClick }) => {
             <img src="./image/menu-close.svg" alt="" aria-hidden={!isOpen} />
           </S.CloseBtn>
           <S.ContentWrapper>
-            <h1>pokemon details</h1>
+            <PokemonDetails {...pokemon} />
           </S.ContentWrapper>
         </>
       </S.Content>

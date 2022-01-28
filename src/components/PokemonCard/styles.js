@@ -21,8 +21,10 @@ export const Thumbnail = styled.div`
 `
 
 export const CardImg = styled.div`
+  position: relative;
+
   > img {
-    height: 210px;
+    height: 180px;
     border-radius: 0;
     object-fit: cover;
   }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { GET_POKEMONS } from '../../graphql/querys-pokemons'
-import { PokemonCard } from '../pokemonCard'
+import { PokemonCard } from '../PokemonCard'
 
 import * as S from './styles'
 
@@ -12,13 +12,13 @@ export function PokemonsContainer() {
     loading
   } = useQuery(GET_POKEMONS, {
     notifyOnNetworkStatusChange: true,
-    variables: { first: 4 }
+    variables: { first: 8 }
   })
 
   const handleShowMore = () => {
     fetchMore({
       variables: {
-        first: pokemons.length + 12
+        first: pokemons.length + 8
       },
       updateQuery: (prev, { fetchMoreResult }) => {
         if (!fetchMoreResult) return prev

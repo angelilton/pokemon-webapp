@@ -25,12 +25,14 @@ export const Content = styled.div`
   right: 5%;
   `}
 
-  max-width: 771px;
-  max-height: 400px;
+  min-width: 450px;
+  max-width: max-content;
+  max-height: max-content;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: #ffffff;
-  margin-top: 2.4rem;
   z-index: 999;
 
   border-radius: 6px;
@@ -110,42 +112,5 @@ export const ContentWrapper = styled.div`
   align-items: start !important;
   gap: 9px !important;
   text-align: left;
-  padding-top: 29px;
-  padding-left: 40px;
-  padding-right: 26px;
-  padding-bottom: 32px;
-
-  h2 {
-    font-size: 22px;
-    font-weight: 400;
-  }
-`
-
-export const Body = styled.div`
-  font-size: 13px;
-  line-height: 18px;
-  color: #000000;
-  text-align: justify;
-  padding-top: 5px;
-  padding-right: 22px;
-
-  overflow-y: auto;
-
-  ::-webkit-scrollbar {
-    width: 7px;
-    height: 302px;
-  }
-
-  ::-webkit-scrollbar-track {
-    border-radius: 8px;
-    background: #dbdbdb;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    border-radius: 8px;
-    background: #b0b0b0;
-  }
-
-  align-items: start !important;
-  gap: 0 !important;
+  padding: 15px;
 `

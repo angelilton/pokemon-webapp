@@ -29,7 +29,6 @@ export const cardsBox = styled.div`
   justify-items: center;
   gap: 14px;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  border: 1px solid red;
 `
 
 export const ShowMore = styled.div`
