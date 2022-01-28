@@ -13,8 +13,6 @@ export const CatchContext = createContext(DefaultValues)
 const CatchProvider = ({ children }) => {
   const [catchItems, setCatchItems] = useState([])
 
-  console.log('catchState', catchItems)
-
   // get items from localStorage to set catchItems initial value
   useEffect(() => {
     const data = getStorageItem()

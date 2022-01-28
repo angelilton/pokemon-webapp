@@ -6,6 +6,7 @@ export const Toggle = styled.div`
   width: 50px;
   height: 35px;
   margin-top: 1.7rem;
+  z-index: 100;
 
   .switch {
     visibility: hidden;
@@ -52,7 +53,7 @@ export const Toggle = styled.div`
     transition: all 0.4s;
   }
   .switch--shadow:checked + label:before {
-    background-color: #8ce196;
+    background-color: #4bb543;
   }
   .switch--shadow:checked + label:after {
     transform: translateX(60px);

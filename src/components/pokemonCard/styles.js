@@ -11,7 +11,7 @@ export const Thumbnail = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* cursor: pointer; */
+  cursor: pointer;
 
   :hover {
     transform: translateY(-0.5rem);
