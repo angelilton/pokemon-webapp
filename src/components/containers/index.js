@@ -1,5 +1,5 @@
 import React from 'react'
-import { useQuery } from '@apollo/react-hooks'
+import { useLazyQuery, useQuery } from '@apollo/react-hooks'
 import { GET_POKEMONS } from '../../graphql/querys-pokemons'
 import { PokemonCard } from '../PokemonCard'
 import InfiniteScroll from '../../utils/infiniteScroll'
@@ -12,7 +12,8 @@ export function PokemonsContainer() {
     fetchMore,
     loading
   } = useQuery(GET_POKEMONS, {
-    notifyOnNetworkStatusChange: true,
+    fetchPolicy: "network-only", 
+    nextFetchPolicy: "cache-first",
     variables: { first: 12 }
   })
 
@@ -23,10 +24,10 @@ export function PokemonsContainer() {
       },
       updateQuery: (prev, { fetchMoreResult }) => {
         if (!fetchMoreResult) return prev
-        const resp = {
+        return {
           pokemons: [...fetchMoreResult.pokemons]
         }
-        return resp
+        
       }
     })
   }
