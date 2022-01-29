@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLazyQuery, useQuery } from '@apollo/react-hooks'
+import { useQuery } from '@apollo/react-hooks'
 import { GET_POKEMONS } from '../../graphql/querys-pokemons'
 import { PokemonCard } from '../PokemonCard'
 import InfiniteScroll from '../../utils/infiniteScroll'

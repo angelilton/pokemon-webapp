@@ -22,11 +22,15 @@ export const Thumbnail = styled.div`
 
 export const CardImg = styled.div`
   position: relative;
+  max-width: 280px;
+  height: 180px;
 
   > img {
-    height: 180px;
+    position: relative;
+    height: 100%;
+    width: 100%;
     border-radius: 0;
-    object-fit: cover;
+    object-fit: contain;
   }
 `
 export const Title = styled.h3`

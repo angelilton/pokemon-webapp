@@ -14,7 +14,6 @@ const InfiniteScroll = ({ fetchMore }) => {
       if (entry.isIntersecting) {
         observer.disconnect()
         fetchMore()
-        console.log('aqui')
       }
     }, options)
     observer.observe(containerRef.current)

@@ -17,13 +17,7 @@ export const Content = styled.div`
   bottom: 25%;
   left: 25%;
   right: 25%;
-
-  ${media.lessThan('medium')`
-   top: 5%;
-  bottom: 5%;
-  left: 5%;
-  right: 5%;
-  `}
+  margin: auto;
 
   min-width: 450px;
   max-width: max-content;
@@ -37,6 +31,21 @@ export const Content = styled.div`
 
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+  ${media.between('medium', 'large')`
+    left: 10%;
+    right: 10%;
+    margin: auto;
+    min-width: max-content;
+  `}
+
+  ${media.lessThan('medium')`
+    top: 15%;
+    left: 5%;
+    right: 5%;
+    margin: auto;
+    min-width: 90%;
+  `}
 `
 
 export const CloseBtn = styled.div`
@@ -45,30 +54,30 @@ export const CloseBtn = styled.div`
   align-items: center;
   cursor: pointer;
   position: absolute;
-  top: -15px;
-  right: -15px;
-  width: 44px;
-  height: 44px;
+  top: -13px;
+  right: -10px;
+  width: 40px;
+  height: 40px;
   background: #ffffff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
   transform: matrix(-1, 0, 0, 1, 0, 0);
   border-radius: 50%;
   z-index: 41;
 
-  svg {
-    width: 18px;
-    height: 18px;
+  img {
+    width: 14px;
+    height: 14px;
   }
 
   ${media.lessThan('medium')`
-   width: 38px;
-   height: 38px;
+   width: 32px;
+   height: 32px;
    top: -10px;
    right: -7px;
 
-    svg {
-    width: 14px;
-    height: 14px;
+    img {
+    width: 12px;
+    height: 12px;
   }
   `}
 `
@@ -107,10 +116,5 @@ export const ContentWrapper = styled.div`
   display: flex;
   height: 100%;
   width: 100%;
-  flex-direction: column;
-  justify-content: start !important;
-  align-items: start !important;
-  gap: 9px !important;
-  text-align: left;
   padding: 15px;
 `

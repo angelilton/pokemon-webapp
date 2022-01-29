@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from 'styled-media-query'
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -9,6 +10,10 @@ export const Wrapper = styled.div`
 
   > div {
     display: flex;
+
+    ${media.lessThan('medium')`
+    flex-direction: column;
+  `}
   }
 `
 export const Title = styled.div`
@@ -33,7 +38,7 @@ export const Thumbnail = styled.div`
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-self: center;
 `
 
 export const CardImg = styled.div`
@@ -57,11 +62,20 @@ export const Details = styled.div`
   p {
     padding: 5px;
   }
+
+  ${media.lessThan('medium')`
+    align-self: center;
+    padding: 20px;
+  `}
 `
 
 export const Header = styled.div`
   display: flex;
   justify-content: space-between;
+
+  + p {
+    margin-right: 100px;
+  }
 
   p {
     background: #ffca39;

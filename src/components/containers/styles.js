@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from 'styled-media-query'
 
 export const Container = styled.div`
   display: flex;
@@ -13,7 +14,6 @@ export const Logo = styled.div`
   width: 100%;
   height: auto;
   justify-content: center;
-  border: 1px red;
 
   img {
     width: 400px;
@@ -28,5 +28,9 @@ export const cardsBox = styled.div`
   display: grid;
   justify-items: center;
   gap: 14px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  ${media.greaterThan('large')`
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  `}
 `
